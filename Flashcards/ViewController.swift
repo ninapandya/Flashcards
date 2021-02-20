@@ -17,7 +17,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         card.layer.cornerRadius = 20.0
-        card.clipsToBounds = true
+        card.layer.shadowRadius = 15.0
+        card.layer.shadowOpacity = 0.2
+        self.frontLabel.layer.cornerRadius = 20.0
+        self.backLabel.layer.cornerRadius = 20.0
+        frontLabel.clipsToBounds = true
+        backLabel.clipsToBounds = true
+        
     }
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
