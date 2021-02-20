@@ -6,7 +6,7 @@
 User can tap on the flashcard to show the answer to the initial question flashcard.
 
 
-<img src="![](Flashcards/FlashcardsGIF.gif) width=200><br>
+<img src="https://giphy.com/embed/lrRc4pxewUsUhZYj4n" width=200><br>
 
 
 ## Required
