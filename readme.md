@@ -3,10 +3,10 @@
 ## Lab 1
 
 ### App Description
-`TODO://` User can tap on the flashcard to show the answer to the initial question flashcard.
+User can tap on the flashcard to show the answer to the initial question flashcard.
 
 
-<img src="/Users/NinaPandya 1/Desktop/FlashcardsGIF.gif" width=200><br>
+<img src="![](FlashcardsGIF.gif)" width=200><br>
 
 
 ## Required
