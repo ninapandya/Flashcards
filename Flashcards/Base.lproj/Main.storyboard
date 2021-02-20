@@ -49,6 +49,7 @@
                     </view>
                     <connections>
                         <outlet property="backLabel" destination="bZ6-8m-kAf" id="8qQ-pt-0A7"/>
+                        <outlet property="card" destination="NZq-SZ-MMC" id="yzV-jx-VUS"/>
                         <outlet property="frontLabel" destination="B9n-VF-KRG" id="3G9-GO-9KZ"/>
                     </connections>
                 </viewController>
