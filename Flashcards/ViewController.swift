@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var frontLabel: UILabel!
     
+    @IBOutlet weak var optionOneBtn: UIButton!
+    @IBOutlet weak var optionTwoBtn: UIButton!
+    @IBOutlet weak var optionThreeBtn: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +28,43 @@ class ViewController: UIViewController {
         frontLabel.clipsToBounds = true
         backLabel.clipsToBounds = true
         
+        optionOneBtn.layer.borderWidth = 3.0
+        optionOneBtn.layer.borderColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        optionOneBtn.layer.cornerRadius = 20.0
+        optionOneBtn.contentHorizontalAlignment = .center
+        
+        optionTwoBtn.layer.borderWidth = 3.0
+        optionTwoBtn.layer.borderColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        optionTwoBtn.layer.cornerRadius = 20.0
+        optionTwoBtn.contentHorizontalAlignment = .center
+        
+        optionThreeBtn.layer.borderWidth = 3.0
+        optionThreeBtn.layer.borderColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        optionThreeBtn.layer.cornerRadius = 20.0
+        optionThreeBtn.contentHorizontalAlignment = .center
+        
     }
 
-    @IBAction func didTapOnFlashcard(_ sender: Any) {
-        if frontLabel.isHidden == true{
-            frontLabel.isHidden = false
-        } else {
-            frontLabel.isHidden = true
-        }
+    //@IBAction func didTapOnFlashcard(_ sender: Any) {
+       // if frontLabel.isHidden == true{
+          //  frontLabel.isHidden = false
+       // } else {
+         //   frontLabel.isHidden = true
+      //  }
             
+  //  }
+    
+    @IBAction func didTapOptionOne(_ sender: Any) {
+        optionOneBtn.isHidden = true
     }
     
+    
+    @IBAction func didTapOptionTwo(_ sender: Any) {
+        frontLabel.isHidden = true
+    }
+    
+    @IBAction func didTapOptionThree(_ sender: Any) {
+        optionThreeBtn.isHidden = true
+    }
 }
 
