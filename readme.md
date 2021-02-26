@@ -3,8 +3,8 @@
 ## Lab 1
 
 ### App Description
-User can tap on the flashcard to show the answer to the initial question flashcard.
-Added styles to the card and selectable multiple choice answers below the card.
+User can quiz themselves on the question "What is computer science?" in this app.
+Added styles to the card and selectable multiple choice options to show the answer.
 
 ## Required App GIF
 <img src="https://media.giphy.com/media/lrRc4pxewUsUhZYj4n/giphy.gif" width=200><br>
