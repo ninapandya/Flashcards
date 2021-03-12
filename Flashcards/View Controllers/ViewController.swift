@@ -66,5 +66,23 @@ class ViewController: UIViewController {
     @IBAction func didTapOptionThree(_ sender: Any) {
         optionThreeBtn.isHidden = true
     }
+    
+    func updateFlashcard(question: String, answer: String, extraAnswerOne: String?, extraAnswerTwo: String?) {
+        frontLabel.text = question
+        backLabel.text = answer
+        
+        optionOneBtn.setTitle(extraAnswerOne, for: .normal)
+        optionTwoBtn.setTitle(answer, for: .normal)
+        optionThreeBtn.setTitle(extraAnswerTwo, for: .normal)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination as! UINavigationController
+        
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        creationController.flashcardsController = self
+    }
 }
 
