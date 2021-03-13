@@ -6,7 +6,7 @@
 
 ### App Walk-though
 
-<img src="https://media.giphy.com/media/PAVjjqv1yLpPZWDpsj/giphy.gif" width=200><br>
+<img src="https://media.giphy.com/media/teIOkK6lQmDUyrjsbZ/giphy.gif" width=200><br>
 
 ## Required
 - [x] User can open the creation screen
