@@ -80,14 +80,44 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjH-vW-oVg">
-                                <rect key="frame" x="188" y="773" width="39" height="89"/>
+                                <rect key="frame" x="189" y="789" width="32" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" systemColor="systemIndigoColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="ezS-pV-dvv" kind="presentation" id="q2o-IX-8Pq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcK-29-8d9">
+                                <rect key="frame" x="36" y="818" width="41" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Prev">
+                                    <color key="titleColor" systemColor="systemIndigoColor"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" systemColor="systemGray3Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapOnPrev:" destination="T5C-Y4-Gv0" eventType="touchUpInside" id="YJw-lK-a6m"/>
+                                    <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wJs-Th-iwp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tq4-EH-ci6">
+                                <rect key="frame" x="327" y="819" width="43" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" systemColor="systemIndigoColor"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" systemColor="systemGray3Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapOnNext:" destination="T5C-Y4-Gv0" eventType="touchUpInside" id="dM6-vj-MOm"/>
+                                    <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xPK-qU-99T"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,12 +128,15 @@
                         <outlet property="backLabel" destination="bZ6-8m-kAf" id="8qQ-pt-0A7"/>
                         <outlet property="card" destination="NZq-SZ-MMC" id="yzV-jx-VUS"/>
                         <outlet property="frontLabel" destination="B9n-VF-KRG" id="3G9-GO-9KZ"/>
+                        <outlet property="nextButton" destination="Tq4-EH-ci6" id="QCW-sk-RoK"/>
                         <outlet property="optionOneBtn" destination="whP-eU-0Gy" id="TqH-uz-yIQ"/>
                         <outlet property="optionThreeBtn" destination="m1w-rg-kHk" id="KTe-Vu-9Ew"/>
                         <outlet property="optionTwoBtn" destination="MfU-fG-biN" id="21V-wX-uzq"/>
+                        <outlet property="prevButton" destination="kcK-29-8d9" id="Gya-Bs-YIh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="T5C-Y4-Gv0" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="YR4-p5-0eC"/>
             </objects>
             <point key="canvasLocation" x="531.8840579710145" y="83.705357142857139"/>
@@ -193,6 +226,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
