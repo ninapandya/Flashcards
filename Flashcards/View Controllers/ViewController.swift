@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Flashcards
 //
-//  Created by Nina Pandya on 2/20/21.
+//  Created by Nina Pandya on 3/19/21.
 //
 
 import UIKit
@@ -74,13 +74,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-       if frontLabel.isHidden == true{
-          frontLabel.isHidden = false
-       } else {
-          frontLabel.isHidden = true
-       }
-            
-   }
+        if frontLabel.isHidden == true{
+           frontLabel.isHidden = false
+        } else {
+           frontLabel.isHidden = true
+        }
+    }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
         optionOneBtn.isHidden = true
@@ -89,6 +88,8 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOptionTwo(_ sender: Any) {
         frontLabel.isHidden = true
+        optionOneBtn.isHidden = true
+        optionThreeBtn.isHidden = true
     }
     
     @IBAction func didTapOptionThree(_ sender: Any) {
@@ -110,16 +111,20 @@ class ViewController: UIViewController {
     @IBAction func didTapOnPrev(_ sender: Any) {
         //decrease current index
         currentIndex = currentIndex - 1
-        
+    
         updateLabels()
         
         updateNextPrevButtons()
         
-    
     }
     
     func updateFlashcard(question: String, answer: String, extraAnswerOne: String?, extraAnswerTwo: String?) {
+        
         let flashcard = Flashcard(question: question, answer: answer, extraAnswer1: extraAnswerOne!, extraAnswer2: extraAnswerTwo!)
+
+        optionOneBtn.setTitle(extraAnswerOne, for: .normal)
+        optionTwoBtn.setTitle(answer, for: .normal)
+        optionThreeBtn.setTitle(extraAnswerTwo, for: .normal)
         
         //Adding flashcard in the flashcards array
         flashcards.append(flashcard)
@@ -129,11 +134,7 @@ class ViewController: UIViewController {
         print("We now have \(flashcards.count) flashcards")
         
         currentIndex = flashcards.count - 1
-        print("Out current index is \(currentIndex)")
-        
-        optionOneBtn.setTitle(extraAnswerOne, for: .normal)
-        optionTwoBtn.setTitle(answer, for: .normal)
-        optionThreeBtn.setTitle(extraAnswerTwo, for: .normal)
+        print("Our current index is \(currentIndex)")
         
         //update buttons
         updateNextPrevButtons()
@@ -142,8 +143,6 @@ class ViewController: UIViewController {
         updateLabels()
         
         saveAllFlashcardsToDisk()
-        
-        
     }
     
     func updateNextPrevButtons(){
@@ -175,7 +174,13 @@ class ViewController: UIViewController {
         frontLabel.text = currentFlashcard.question
         backLabel.text = currentFlashcard.answer
         
+        optionOneBtn.titleLabel?.text = currentFlashcard.extraAnswer1
+        optionTwoBtn.titleLabel?.text = currentFlashcard.answer
+        optionThreeBtn.titleLabel?.text = currentFlashcard.extraAnswer2
         
+        optionOneBtn.isHidden = false
+        optionThreeBtn.isHidden = false
+        frontLabel.isHidden = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -211,9 +216,6 @@ class ViewController: UIViewController {
             
             flashcards.append(contentsOf: savedCards)
         }
-        
-        
-        
     }
 }
 

@@ -137,7 +137,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="T5C-Y4-Gv0" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="YR4-p5-0eC"/>
+                <tapGestureRecognizer id="YR4-p5-0eC">
+                    <connections>
+                        <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="iWk-8d-IiU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="531.8840579710145" y="83.705357142857139"/>
         </scene>

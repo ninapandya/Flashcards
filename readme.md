@@ -1,5 +1,24 @@
 ## Flashcards App
 
+## Lab 3
+
+### App Description
+User can go between multiple flashcards and their flashcards will be saved even after exiting the app.
+
+### App Walk-though
+
+<img src="https://media.giphy.com/media/Zfpkka2GB1C9qJUo3g/giphy.gif" width=200><br>
+
+## Required
+- [x] User can browse through multiple flashcards
+- [x] User can re-open the app and see previously created flashcards
+- [x] Push code to GitHub
+## Optional
+- [ ] User can delete a flashcard
+- [ ] User can edit existing flashcard
+- [ ] User can store multiple choice questions (working on this)
+
+
 ## Lab 2
 
 ### User can add their own flashcard to the app to quiz themselves with. They can add multiple options.
