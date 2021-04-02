@@ -74,10 +74,36 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-        if frontLabel.isHidden == true{
-           frontLabel.isHidden = false
-        } else {
-           frontLabel.isHidden = true
+        flipFlashcard()
+    }
+    
+    func flipFlashcard(){
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            if self.frontLabel.isHidden == true {
+                self.frontLabel.isHidden = false
+            } else {
+                self.frontLabel.isHidden = true
+            }
+        })
+        
+    }
+    
+    func animateCardOut(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }, completion: {finished  in
+            self.updateLabels()
+            self.animateCardIn()
+        })
+    }
+    
+    func animateCardIn(){
+        //Start on the right side
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        
+        //Animate card going back to its original position
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
         }
     }
     
@@ -87,7 +113,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func didTapOptionTwo(_ sender: Any) {
-        frontLabel.isHidden = true
+        //frontLabel.isHidden = true
+        flipFlashcard()
         optionOneBtn.isHidden = true
         optionThreeBtn.isHidden = true
     }
@@ -105,6 +132,9 @@ class ViewController: UIViewController {
         
         //update buttons
         updateNextPrevButtons()
+        
+        animateCardOut()
+        
     
     }
     
@@ -115,6 +145,8 @@ class ViewController: UIViewController {
         updateLabels()
         
         updateNextPrevButtons()
+        
+        animateCardOut()
         
     }
     
@@ -174,11 +206,13 @@ class ViewController: UIViewController {
         frontLabel.text = currentFlashcard.question
         backLabel.text = currentFlashcard.answer
         
-        optionOneBtn.titleLabel?.text = currentFlashcard.extraAnswer1
-        optionTwoBtn.titleLabel?.text = currentFlashcard.answer
-        optionThreeBtn.titleLabel?.text = currentFlashcard.extraAnswer2
+        
+        optionOneBtn.setTitle(currentFlashcard.extraAnswer1, for: .normal)
+        optionTwoBtn.setTitle(currentFlashcard.answer, for: .normal)
+        optionThreeBtn.setTitle(currentFlashcard.extraAnswer2, for: .normal)
         
         optionOneBtn.isHidden = false
+        optionTwoBtn.isHidden = false
         optionThreeBtn.isHidden = false
         frontLabel.isHidden = false
     }
